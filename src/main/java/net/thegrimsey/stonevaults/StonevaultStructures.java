@@ -16,8 +16,8 @@ import net.minecraft.world.gen.feature.ConfiguredStructureFeature;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.FeatureConfig;
 import net.minecraft.world.gen.feature.StructureFeature;
-import net.thegrimsey.stonevaults.structures.DungeonStructure;
-import net.thegrimsey.stonevaults.structures.IglooStructure;
+//import net.thegrimsey.stonevaults.structures.DungeonStructure;
+//import net.thegrimsey.stonevaults.structures.IglooStructure;
 import net.thegrimsey.stonevaults.structures.MageTowerStructure;
 import net.thegrimsey.stonevaults.structures.PillagerDungeonStructure;
 
@@ -27,21 +27,21 @@ public class StonevaultStructures {
     static final StructureFeature<DefaultFeatureConfig> MAGETOWER = new MageTowerStructure(DefaultFeatureConfig.CODEC);
     static ConfiguredStructureFeature<?, ?> CONFIGURED_MAGETOWER = MAGETOWER.configure(DefaultFeatureConfig.DEFAULT);
 
-    static final StructureFeature<DefaultFeatureConfig> IGLOO = new IglooStructure(DefaultFeatureConfig.CODEC);
-    static ConfiguredStructureFeature<?, ?> CONFIGURED_IGLOO = IGLOO.configure(DefaultFeatureConfig.DEFAULT);
-
-    static final StructureFeature<DefaultFeatureConfig> DUNGEON = new DungeonStructure(DefaultFeatureConfig.CODEC);
-    static ConfiguredStructureFeature<?, ?> CONFIGURED_DUNGEON = DUNGEON.configure(DefaultFeatureConfig.DEFAULT);
+//    static final StructureFeature<DefaultFeatureConfig> IGLOO = new IglooStructure(DefaultFeatureConfig.CODEC);
+//    static ConfiguredStructureFeature<?, ?> CONFIGURED_IGLOO = IGLOO.configure(DefaultFeatureConfig.DEFAULT);
+//
+//    static final StructureFeature<DefaultFeatureConfig> DUNGEON = new DungeonStructure(DefaultFeatureConfig.CODEC);
+//    static ConfiguredStructureFeature<?, ?> CONFIGURED_DUNGEON = DUNGEON.configure(DefaultFeatureConfig.DEFAULT);
 
     static final StructureFeature<DefaultFeatureConfig> PILLAGER_DUNGEON = new PillagerDungeonStructure(DefaultFeatureConfig.CODEC);
     static ConfiguredStructureFeature<?, ?> CONFIGURED_PILLAGER_DUNGEON = PILLAGER_DUNGEON.configure(DefaultFeatureConfig.DEFAULT);
 
     public static void registerStructures() {
         registerStructure("magetower", MAGETOWER, CONFIGURED_MAGETOWER, BiomeSelectors.foundInOverworld().and(BiomeSelectors.categories(Biome.Category.FOREST, Biome.Category.JUNGLE)), Stonevaults.CONFIG.MAGETOWER.STUCTURECONFIG, true);
-        registerStructure("igloo", IGLOO, CONFIGURED_IGLOO, BiomeSelectors.foundInOverworld().and(BiomeSelectors.categories(Biome.Category.ICY)), Stonevaults.CONFIG.IGLOO.STUCTURECONFIG, true);
+//        registerStructure("igloo", IGLOO, CONFIGURED_IGLOO, BiomeSelectors.foundInOverworld().and(BiomeSelectors.categories(Biome.Category.ICY)), Stonevaults.CONFIG.IGLOO.STUCTURECONFIG, true);
 
         Predicate<BiomeSelectionContext> pillagerDungeonPredicate = BiomeSelectors.categories(Biome.Category.ICY, Biome.Category.TAIGA).or(BiomeSelectors.includeByKey(BiomeKeys.DARK_FOREST));
-        registerStructure("dungeon", DUNGEON, CONFIGURED_DUNGEON, BiomeSelectors.foundInOverworld().and(BiomeSelectors.categories(Biome.Category.OCEAN, Biome.Category.BEACH, Biome.Category.ICY).negate()).and(pillagerDungeonPredicate.negate()), Stonevaults.CONFIG.DUNGEON.STUCTURECONFIG, false);
+//        registerStructure("dungeon", DUNGEON, CONFIGURED_DUNGEON, BiomeSelectors.foundInOverworld().and(BiomeSelectors.categories(Biome.Category.OCEAN, Biome.Category.BEACH, Biome.Category.ICY).negate()).and(pillagerDungeonPredicate.negate()), Stonevaults.CONFIG.DUNGEON.STUCTURECONFIG, false);
         registerStructure("pillager_dungeon", PILLAGER_DUNGEON, CONFIGURED_PILLAGER_DUNGEON, pillagerDungeonPredicate.and(BiomeSelectors.foundInOverworld()), Stonevaults.CONFIG.DUNGEON.STUCTURECONFIG, false);
     }
 
